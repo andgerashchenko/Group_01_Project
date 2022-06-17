@@ -60,7 +60,7 @@ Then user should get error message
             driver.get("http://login2.nextbasecrm.com/");
             String expectedResult = "Incorrect login or password";
             driver.findElement(By.name("USER_LOGIN")).sendKeys(ConfigReader.getProperty("user_crm_hd2"));
-            driver.findElement(By.name("USER_PASSWORD")).sendKeys(ConfigReader.getProperty("password")+"12");
+            driver.findElement(By.name("USER_PASSWORD")).sendKeys(ConfigReader.getProperty("password")+"123");
             driver.findElement(By.className("login-btn")).click();
             String actualResult = driver.findElement(By.className("errortext")).getText();
             Assert.assertEquals(actualResult, expectedResult);
