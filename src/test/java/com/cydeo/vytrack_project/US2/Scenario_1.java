@@ -1,5 +1,6 @@
 package com.cydeo.vytrack_project.US2;
 
+import com.cydeo.utilities.ConfigReader;
 import com.cydeo.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -8,19 +9,20 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 public class Scenario_1 {
-    public class Scenario1_AC4 {
+
         // 4.Verify that Store manager or sales manager should be able to edit the car.
 
         public static void loginVyTrackTruckDriver (WebDriver driver){
 
-            Driver.getDriver().get(ConfigurationReader.getProperty("env"));
+            Driver.getDriver().get(ConfigReader.getProperty("env2"));
 
 
             WebElement userNameBox = Driver.getDriver().findElement(By.id("prependedInput"));
-            userNameBox.sendKeys(ConfigurationReader.getProperty("username"));
+            userNameBox.sendKeys(ConfigReader.getProperty(""));
+            userNameBox.sendKeys(ConfigReader.getProperty("user_sm"));
 
             WebElement passwordBox = Driver.getDriver().findElement(By.id("prependedInput2"));
-            passwordBox.sendKeys(ConfigurationReader.getProperty("password"));
+            passwordBox.sendKeys(ConfigReader.getProperty("password2"));
 
             WebElement loginBox = Driver.getDriver().findElement(By.id("_submit"));
             loginBox.click();
@@ -29,14 +31,14 @@ public class Scenario_1 {
 
         public static void loginVyStoreManager (WebDriver driver){
 
-            Driver.getDriver().get(ConfigurationReader.getProperty("env"));
+            Driver.getDriver().get(ConfigReader.getProperty("env2"));
 
 
             WebElement userNameBox = Driver.getDriver().findElement(By.id("prependedInput"));
-            userNameBox.sendKeys(ConfigurationReader.getProperty("usernamestoremanager"));
+            userNameBox.sendKeys(ConfigReader.getProperty("user_sm"));
 
             WebElement passwordBox = Driver.getDriver().findElement(By.id("prependedInput2"));
-            passwordBox.sendKeys(ConfigurationReader.getProperty("password"));
+            passwordBox.sendKeys(ConfigReader.getProperty("password2"));
 
             WebElement loginBox = Driver.getDriver().findElement(By.id("_submit"));
             loginBox.click();
@@ -46,7 +48,7 @@ public class Scenario_1 {
         @Test
         public void edit_car() throws InterruptedException {
 
-            VYTrackLoginCredentials.loginVyStoreManager(Driver.getDriver());
+            loginVyStoreManager(Driver.getDriver());
 
             Thread.sleep(3000);
 
@@ -85,4 +87,4 @@ public class Scenario_1 {
 
         }}
 
-}
+
