@@ -57,7 +57,7 @@ Then user should get error message
         @Test
         public void AC3_negPassLogin() {
 
-            driver.get("http://login2.nextbasecrm.com/");
+            driver.get(ConfigReader.getProperty("env1"));
             String expectedResult = "Incorrect login or password";
             driver.findElement(By.name("USER_LOGIN")).sendKeys(ConfigReader.getProperty("user_crm_hd2"));
             driver.findElement(By.name("USER_PASSWORD")).sendKeys(ConfigReader.getProperty("password")+"123");
@@ -75,7 +75,7 @@ Then user should get error message
     @Test
     public void AC4_negPassUserLogin() {
 
-        driver.get("http://login2.nextbasecrm.com/");
+        driver.get(ConfigReader.getProperty("env1"));
         String expectedResult = "Incorrect login or password";
         driver.findElement(By.name("USER_LOGIN")).sendKeys("");
         driver.findElement(By.name("USER_PASSWORD")).sendKeys("");
