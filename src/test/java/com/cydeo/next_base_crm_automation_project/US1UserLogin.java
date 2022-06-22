@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
  Then user should be able to see NextBase CRM Homepage
  */
 public class US1UserLogin extends TestBase {
-    @Test
+    @org.junit.Test
     public void AC1_login() {
         driver.get("http://login2.nextbasecrm.com/");
         String username = "helpdesk2@cybertekschool.com";
