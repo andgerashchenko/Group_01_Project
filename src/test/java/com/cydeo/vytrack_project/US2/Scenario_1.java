@@ -18,7 +18,7 @@ public class Scenario_1 {
 
 
             WebElement userNameBox = Driver.getDriver().findElement(By.id("prependedInput"));
-            userNameBox.sendKeys(ConfigReader.getProperty(""));
+
             userNameBox.sendKeys(ConfigReader.getProperty("user_sm"));
 
             WebElement passwordBox = Driver.getDriver().findElement(By.id("prependedInput2"));
