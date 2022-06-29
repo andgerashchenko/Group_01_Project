@@ -27,6 +27,7 @@ public class US7AC1_Like_Button {
         Assert.assertTrue(Driver.getDriver().findElement(By.xpath("(//a[.='Like'])[11]/../../..//span[@data-reaction='like']")).isDisplayed());
         Assert.assertTrue(Driver.getDriver().findElement(By.xpath("(//a[.='Like'])[3]/../../..//div[starts-with(@id, 'bx-ilike-top-users')]")).getText().contains("You"));
         Assert.assertTrue(Driver.getDriver().findElement(By.xpath("(//a[.='Like'])[11]/../../..//div[starts-with(@id, 'bx-ilike-top-users')]")).getText().contains("You"));
+
         Driver.closeDriver();
     }
     @Test
